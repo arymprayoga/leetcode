@@ -1,12 +1,19 @@
 # @param {Integer[]} nums
 # @return {Integer[]}
 def product_except_self(nums)
-    n = nums.size
-    out = [1] * n
-    left = right = 1
-    1.upto(n-1) { |i|
-        out[i] *= left *= nums[i-1]
-        out[~i] *= right *= nums[-i]
-    }
-    out
+    suffix = 1
+    prefix = 1
+    product = []
+
+    nums.each do |n|
+      product << prefix
+      prefix *= n
+    end
+
+    (nums.length - 1).downto(0) do |i|
+      product[i] *= suffix
+      suffix *= nums[i]
+    end
+
+    return product
 end
