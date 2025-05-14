@@ -2,16 +2,16 @@
 # @return {Void} Do not return anything, modify nums in-place instead.
 def move_zeroes(nums)
     len = nums.length()
-    slow = 0
-    fast = 0
-    while fast < len
-        if nums[fast] != 0
-            nums[slow] = nums[fast]
-            slow+=1
+    a = 0
+    b = 0
+    while b < len
+        if nums[b] != 0
+            nums[a] = nums[b]
+            a+=1
         end
-        fast+=1
+        b+=1
     end
-    for i in slow..len-1 do
+    for i in a..len-1 do
         nums[i] = 0
     end
 end
