@@ -1,7 +1,7 @@
 # @param {String} s
 # @return {String}
 def reverse_words(s)
-     s.strip!
+    s.strip!
     reverse_string(s,0,s.length-1)
     start = 0
     for i in 0...s.length
@@ -30,3 +30,5 @@ def reverse_string(s,start,finish)
         start +=1
     end
 end
+
+# s.split.reverse.join(' ')
